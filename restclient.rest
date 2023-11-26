@@ -1,0 +1,13 @@
+GET http://0.0.0.0:3000/
+
+### POST upload a file
+POST http://localhost:3000/upload HTTP/1.1
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="myFile"; filename="package.json"
+Content-Type: application/json
+
+#@./path/to/your/package.json
+@./package.json
+--WebAppBoundary--
